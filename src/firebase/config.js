@@ -10,14 +10,14 @@ const firebaseConfig = {
   projectId: "gallery-a5f6f",
   storageBucket: "gallery-a5f6f.appspot.com",
   messagingSenderId: "314136673014",
-  appId: "1:314136673014:web:11dd2141c981b7f9a30ad7"
+  appId: "1:314136673014:web:11dd2141c981b7f9a30ad7",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 import { getStorage } from "firebase/storage";
-const storage = getStorage(app);
+export const storage = getStorage(app);
 
 import { getFirestore } from "firebase/firestore";
-const db = getFirestore(app);
+export const db = getFirestore(app);
