@@ -15,3 +15,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+import { getStorage } from "firebase/storage";
+const storage = getStorage(app);
+
+import { getFirestore } from "firebase/firestore";
+const db = getFirestore(app);
