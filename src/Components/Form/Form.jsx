@@ -8,7 +8,7 @@ const Form = () => {
 
   const types = ["image/png", "image/jpeg"];
 
-  const changeHandler = (e) => {
+  const handleChange = (e) => {
     var selected = e.target.files[0];
     if (selected && types.includes(selected.type)) {
       setFile(selected);
@@ -20,11 +20,14 @@ const Form = () => {
   };
 
   return (
-    <form className="form">
-      <input type="file" onChange={changeHandler} />
+    <form>
+      <label>
+        <input type="file" onChange={handleChange} />
+        <span>+</span>
+      </label>
       <div className="output">
         {error && <div className="error">{error}</div>}
-        {file && <div className="name">{file.name}</div>}
+        {file && <div>{file.name}</div>}
         {file && <ProgressBar file={file} setFile={setFile} />}
       </div>
     </form>
