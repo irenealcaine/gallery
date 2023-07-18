@@ -1,10 +1,12 @@
 import React from "react";
-import Title from "./comps/Title";
+import Form from "./Components/Form/Form.jsx";
+import Title from "./Components/Title/Title.jsx";
 
 function App() {
   return (
     <div className="App">
       <Title />
+      <Form />
     </div>
   );
 }
