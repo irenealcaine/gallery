@@ -1,0 +1,14 @@
+.image-grid {
+  margin: 20px auto;
+  columns: 4;
+  column-gap: 20px;
+}
+.image-wrap {
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+.image-wrap img {
+  width: 100%;
+  border-radius: 15px;
+}

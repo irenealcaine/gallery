@@ -27,7 +27,8 @@ const useStorage = (file) => {
       async () => {
         const url = await getDownloadURL(storageRef);
         // collectionRef.add({url, createdAt})
-        const createdAt = serverTimestamp();
+        const createdAt = timeStamp;
+        console.log(createdAt);
         const newDocument = { url, createdAt };
         addDoc(collectionRef, newDocument);
         setUrl(url);
