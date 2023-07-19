@@ -10,6 +10,7 @@ const ImageGrid = ({ setSelectedImg }) => {
       {docs &&
         docs.map((doc) => (
           <div
+            whileHover={{ opacity: 1 }}
             className="image-wrap"
             key={doc.id}
             onClick={() => setSelectedImg(doc.url)}
