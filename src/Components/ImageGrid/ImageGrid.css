@@ -12,3 +12,15 @@
   width: 100%;
   border-radius: 15px;
 }
+
+@media (max-width: 680px) {
+  .image-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .image-grid {
+    columns: 1;
+  }
+}
