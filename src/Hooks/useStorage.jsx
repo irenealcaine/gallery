@@ -1,5 +1,6 @@
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage } from "../firebase/config"; // Importa la instancia de Firebase Storage
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { storage, db, timeStamp } from "../firebase/config"; // Importa la instancia de Firebase Storage
 import { useEffect, useState } from "react";
 
 const useStorage = (file) => {
@@ -9,6 +10,7 @@ const useStorage = (file) => {
 
   useEffect(() => {
     const storageRef = ref(storage, file.name);
+    const collectionRef = collection(db, "images");
 
     const uploadTask = uploadBytesResumable(storageRef, file);
 
@@ -24,6 +26,11 @@ const useStorage = (file) => {
       },
       async () => {
         const url = await getDownloadURL(storageRef);
+        // collectionRef.add({url, createdAt})
+        const createdAt = timeStamp;
+        console.log(createdAt);
+        const newDocument = { url, createdAt };
+        addDoc(collectionRef, newDocument);
         setUrl(url);
       }
     );

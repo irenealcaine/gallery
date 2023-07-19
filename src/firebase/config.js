@@ -17,7 +17,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 import { getStorage } from "firebase/storage";
-export const storage = getStorage(app);
+const storage = getStorage(app);
 
-import { getFirestore } from "firebase/firestore";
-export const db = getFirestore(app);
+import { getFirestore, serverTimestamp } from "firebase/firestore";
+const db = getFirestore(app);
+const timeStamp = serverTimestamp();
+
+export { storage, db, timeStamp };
