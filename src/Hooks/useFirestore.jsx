@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const useFirestore = (collectionName) => {
@@ -7,8 +7,9 @@ const useFirestore = (collectionName) => {
 
   useEffect(() => {
     const collectionRef = collection(db, collectionName);
+    const q = query(collectionRef, orderBy("createdAt", "desc"));
 
-    const unsubscribe = onSnapshot(collectionRef, (snapshot) => {
+    const unsubscribe = onSnapshot(q, (snapshot) => {
       const documents = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
