@@ -15,7 +15,7 @@ const ImageGrid = ({ setSelectedImg }) => {
             key={doc.id}
             onClick={() => setSelectedImg(doc.url)}
           >
-            <img src={doc.url} alt="uploadeed pic" />
+            <img src={doc.url} alt="uploaded pic" />
           </div>
         ))}
     </div>
