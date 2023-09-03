@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
 
 :root {
-  --primary: #d7b2ef;
-  --secondary: #2e2e2e;
+  --primary: #8326c1;
+  --secondary: #d597ff;
   --error: #ff4a4a;
 }
 
@@ -10,17 +10,9 @@
 body {
   font-family: "Quicksand", sans-serif;
   color: var(--secondary);
+  background-color: #e9e9e9;
 }
 .App {
   max-width: 960px;
   margin: 0 auto;
 }
-
-
-/* upload form styles */
-
-/* progress bar styles */
-
-/* image grid styles */
-
-/* modal styles */
